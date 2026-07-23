@@ -4,7 +4,7 @@ To successfully exploit a web cache poisoning vulnerability, you first need to f
 
 ## Methodology
 
-1. **Find a cacheable, high-traffic page.** Impact scales with popularity, so prioritize pages likely to be requested by many users (homepage, login page, popular product/blog pages). Confirm the response is actually being cached by checking the HTTP response headers — covered in detail in [[Web cache deception]] (`X-Cache: hit`, `CF-Cache-Status: HIT`, `Age > 0`, etc.).
+1. **Find a cacheable, high-traffic page.** Impact scales with popularity, so prioritize pages likely to be requested by many users (homepage, login page, popular product/blog pages). Confirm the response is actually being cached by checking the HTTP response headers — covered in detail in [[Web-cache-deception]] (`X-Cache: hit`, `CF-Cache-Status: HIT`, `Age > 0`, etc.).
 
 2. **Add a cache buster.** Use a unique, unkeyed query string parameter on every test request so you're never poisoning (or being served) the *real* cache entry that live users hit — you want your own isolated, disposable cache entry to experiment safely on.
 
